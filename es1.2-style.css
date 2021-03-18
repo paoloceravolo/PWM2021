@@ -1,0 +1,46 @@
+#navbar{
+    background-color: lightgrey;
+}
+
+.menu{
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#page{
+    display: flex;
+    flex-direction: row;
+}
+
+.news{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.Heading{
+    border-style: solid;
+    border-radius: 15px;
+    margin: 2.5%;
+}
+
+.cardMain{
+    border-style: solid;
+    border-radius: 15px;
+    margin: 2.5%;
+}
+
+.sidebarPics{
+    margin: 10%;
+    max-width: 30%;
+    height: 80%;
+}

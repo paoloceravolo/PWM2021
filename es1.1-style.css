@@ -1,0 +1,38 @@
+.evidenziato {
+    background-color: yellow;
+}
+
+#content {
+    width: 70%;
+    float: left;
+}
+
+aside {
+    width: 30%;
+    float: right;
+}
+
+header {
+    background-color: grey;
+    color: white;
+}
+
+nav {
+    background-color: black;
+}
+
+#headings > article {
+    width: 50%;
+    float: left;
+}
+
+main figure {
+    float: left;
+}
+
+main {
+    border: solid;
+    margin: 10px;
+    padding: 10px;
+    background-color: lightslategray;
+}
