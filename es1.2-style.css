@@ -4,20 +4,40 @@
 
 .menu{
     background-color: grey;
-    display: flex;
+    /*display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
+
+.menu a, .menu input{
+    margin: 5px;
+    color: red;
+}
+
+a:hover, a:visited{
+    color: #cc0066;
+}
+
+div:target {
+    background-color: gold;
+};
 
 #page{
     display: flex;
     flex-direction: row;
 }
 
-.news{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+#content{
+    /* display: flex; */
+    /* flex-direction: column;*/ 
+    /* justify-content: space-evenly;*/ 
+    width: 70%;
+    float: left;
+}
+
+#sidebar{
+    width: 30%;
+    float: left;
 }
 
 .row{
@@ -27,20 +47,34 @@
     width: 100%;
 }
 
-.Heading{
-    border-style: solid;
+.standard-border {
     border-radius: 15px;
+    border: 1px solid gray;
     margin: 2.5%;
+    padding: 2.5%;}
+
+.Heading{
+    border-radius: 15px;
+    border: 1px solid gray;
+    margin: 2.5%;
+    padding: 2.5%;
 }
 
 .cardMain{
-    border-style: solid;
     border-radius: 15px;
+    border: 1px solid gray;
     margin: 2.5%;
+    padding: 2.5%;
+}
+
+.cardMain > p::first-letter{
+    font-size: 110%;
+    color: red;
 }
 
 .sidebarPics{
-    margin: 10%;
-    max-width: 30%;
-    height: 80%;
+    margin: 5%;
+    max-width: 40%;
+    height: 100px;
+    object-fit: contain;
 }
