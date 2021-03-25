@@ -51,20 +51,17 @@ div:target {
     border-radius: 15px;
     border: 1px solid gray;
     margin: 2.5%;
-    padding: 2.5%;}
-
-.Heading{
-    border-radius: 15px;
-    border: 1px solid gray;
-    margin: 2.5%;
     padding: 2.5%;
 }
 
+.Heading{
+    margin: 1.5%;
+    padding: 1.5%;
+}
+
 .cardMain{
-    border-radius: 15px;
-    border: 1px solid gray;
-    margin: 2.5%;
-    padding: 2.5%;
+    margin: 2.8%;
+    padding: 2.8%;
 }
 
 .cardMain > p::first-letter{
@@ -77,4 +74,18 @@ div:target {
     max-width: 40%;
     height: 100px;
     object-fit: contain;
+}
+
+
+@media (max-width: 770px) {
+  .row{
+      /*flex-wrap: wrap;*/
+      display: block;
+      /*flex: 100%;*/
+  }
+
+  #content, #sidebar{
+    float: none;
+      width: 100%;
+  }
 }
