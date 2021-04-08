@@ -1,0 +1,212 @@
+.clock {
+  border-radius: 50%;
+  background: #fff url(ios_clock.svg) no-repeat center;
+  background-size: 88%;
+  height: 10em;
+  padding-bottom: 0%;
+  position: relative;
+  width: 10em;
+  margin: auto;
+}
+
+#hours {
+    background: #000;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  width: 2.5%;
+}
+
+#minutes {
+  background: #000;
+  height: 25%;
+  left: 49%;
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  width: 2%;
+}
+
+#seconds {
+    background: #000;
+  height: 30%;
+  left: 49.5%;
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  width: 1%;
+  z-index: 8;
+}
+
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+#hours {
+  animation: rotate 43200s infinite linear;
+}
+#minutes {
+  animation: rotate 3600s infinite steps(60);
+}
+#seconds {
+  animation: rotate 60s infinite steps(60);
+}
+
+
+body {
+  color: white;
+}
+
+
+#navbar{
+    background-color: lightgrey;
+}
+
+.menu{
+    background-color: grey;
+    /*display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+}
+
+.menu a, .menu input{
+    margin: 5px;
+    color: red;
+}
+
+a:hover, a:visited{
+    color: #cc0066;
+}
+
+div:target {
+    border: 2px solid gold;
+};
+
+#page{
+    /*float: left;
+    margin: 3px;*/
+    /*width: 100%;
+    height: 100%;*/
+    display: flex;
+    flex-direction: row;
+}
+
+#content{
+    /* display: flex; */
+    /* flex-direction: column;*/ 
+    /* justify-content: space-evenly;*/ 
+    width: 75%;
+    float: left;
+}
+
+#sidebar{
+    width: 23%;
+    float: left;
+    margin: auto;
+}
+
+.row{
+   /*display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;*/
+    width: 100%;
+    display: block;
+}
+
+.row:before, .row:after{
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.standard-border {
+    border-radius: 15px;
+    border: 1px solid gray;
+    margin: 0.5%;
+    padding: 0.5%;
+}
+
+/*
+.Heading{
+    margin: 1.5%;
+    padding: 1.5%;
+}
+
+.cardMain{
+    margin: 2.8%;
+    padding: 2.8%;
+}
+*/
+
+.cardMain > p::first-letter{
+    font-size: 110%;
+    color: red;
+}
+
+.sidebarPics{
+    margin: 1.5%;
+    margin-top: 5.5%;
+     margin-left: 5%;
+  margin-right: 5%;
+    max-width: 39%;
+   /* height: 100px; */
+    object-fit: contain;
+}
+
+.parallax{
+    background: url("https://www.joshmorony.com/media/2016/04/phaser-parallax-gif.gif") no-repeat center center;
+    background-color: lightgrey;
+    background-attachment: fixed;
+    background-size: cover;
+    /*height: 100%;*/
+}
+
+[class*='col-']{
+    float:left;
+    min-height: 1px;
+}
+
+.col-1{width: 95%}
+.col-2{width: 45%}
+.col-3{width: 30%}
+.col-4{width: 25%}
+.col-5{width: 20%}
+.col-6{width: 16%}
+
+
+@media (max-width: 770px) {
+  .row{
+      /*flex-wrap: wrap;*/
+      display: block;
+      /*flex: 100%;*/
+  }
+
+  #content, #sidebar{
+    float: none;
+      width: 100%;
+  }
+
+.col-1{width: 95%}
+.col-2{width: 45%}
+.col-3{width: 45%}
+.col-4{width: 45%}
+.col-5{width: 45%}
+.col-6{width: 45%}
+
+}
+
+@media (max-width: 400px) {
+
+.col-1{width: 95%}
+.col-2{width: 95%}
+.col-3{width: 95%}
+.col-4{width: 95%}
+.col-5{width: 95%}
+.col-6{width: 95%}
+
+}
