@@ -1,3 +1,21 @@
+.on{
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  width: 57px;
+  height: 33px;
+  background: url('switch.png') -2px -2.5px;
+}
+
+.off{
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  width: 57px;
+  height: 33px;
+  background: url('switch.png') -2px -51px;
+}
+
 .clock {
   border-radius: 50%;
   background: #fff url(ios_clock.svg) no-repeat center;

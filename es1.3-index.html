@@ -3,6 +3,13 @@
     <head>
         <title>Project Name</title>    
         <link href="es1.3-style.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript">
+            function fswitch(el){
+            if (el.className == 'on'){
+            el.className = 'off'
+            }else{el.className='on'}
+            }
+        </script>
     </head>
     <body class="parallax">
         <header id="navbar">
@@ -14,6 +21,7 @@
                 <a href="#r1">First</a>
                 <a href="#r2">Second</a>
                 <input type=""  name="search">
+                <button id="switch" class="off" onclick="fswitch(this)"></button>
             </div>
         </header>
         <div id="page">
