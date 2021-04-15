@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Worker</title>   
+    </head>
+    <body>
+        Raggio minore: <input type="text" id="r1">
+        Raggio maggiore: <input type="text" id="r2">
+        <input type="button" onclick="calcola()" value="calcola">
+        <div id="result"></div>
+    
+    <script type="text/javascript">
+        function area(r){
+                return Math.PI * r * r;
+            }
+
+        function calcola(){
+            console.time("Tempo di calcolo");
+            var rmin = document.getElementById('r1').value;
+            var rmax = document.getElementById('r2').value;
+
+            for(i=rmin; i<=rmax; i++){
+            document.getElementById('result').innerHTML += area(i)+'<br>';
+            }
+            console.timeEnd("Tempo di calcolo");
+        }
+
+    </script> 
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
