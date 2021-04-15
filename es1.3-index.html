@@ -2,14 +2,7 @@
 <html>
     <head>
         <title>Project Name</title>    
-        <link href="es1.3-style.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript">
-            function fswitch(el){
-            if (el.className == 'on'){
-            el.className = 'off'
-            }else{el.className='on'}
-            }
-        </script>
+        <link href="es1.3-style-dark.css" rel="stylesheet" type="text/css">
     </head>
     <body class="parallax">
         <header id="navbar">
@@ -98,6 +91,32 @@
             window.setTimeout(setTime, 1000);
             }
             setTime();
+        </script>
+         <script type="text/javascript">
+
+           function darkMode(){
+                document.getElementsByTagName('body')[0].className = 'parallax-dark';
+                document.getElementById('switch').className = 'on';
+                localStorage.setItem('darkmode', 'y')
+           }
+            function lightMode(){
+                document.getElementsByTagName('body')[0].className = 'parallax';
+                document.getElementById('switch').className = 'off';
+                localStorage.setItem('darkmode', 'n')
+           }
+
+            var darkmode = localStorage.getItem('darkmode');
+            if(darkmode == 'y'){
+                darkMode()
+            console.log('if');
+            }else{lightMode()}
+
+            function fswitch(el){
+            if (el.className == 'on'){
+            lightMode()
+            console.log('button');
+            }else{darkMode()}
+            }
         </script>
     </body>
 </html>
