@@ -1,0 +1,7 @@
+<h2> Esempio di contenuto caricato da remoto</h2>
+<p><cite>Quello che lʼinformazione consuma è piuttosto ovvio: consuma
+lʼattenzione dei suoi destinatari. Dunque unʼabbondanza di
+informazione crea povertà dʼattenzione, ed il bisogno di scegliere
+come distribuire in maniera efficiente questa attenzione tra la
+sovrabbondanza di informazioni che potrebbero consumarla</cite></p>
+<p><b>H.A. Simon</b></p>
