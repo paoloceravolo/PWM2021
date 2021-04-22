@@ -16,15 +16,20 @@
             let r = document.getElementById('rnum').value;
             const random1 = crypto.getRandomValues( new Uint32Array(r));
             const random2 = crypto.getRandomValues( new Uint8Array(r));
-
+            var res = [];
             for (i=0; i<random1.length; i++){
                 for(j=0;j<random1.length; j++){
                     if(random1[i] % random2[j] == 0){
-                        document.getElementById('results').innerHTML +=
-                        random1[i] + '<br>'
+                        if(res.indexOf(random1[i])===-1){
+                            res.push(random1[i]);
+                        }else{console.log('Already in')}                                  
                     }
                 }            
             }
+       for(i=0;i<res.length; i++){
+        document.getElementById('results').innerHTML += res[i] + '<br>'
+       } 
+        
         console.timeEnd('Tempo Index');
         }
 
