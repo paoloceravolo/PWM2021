@@ -11,6 +11,15 @@
 
     <script type="text/javascript">
         document.getElementById('btn').addEventListener('click', runWorker);
+
+        function addItem(item, array){
+            let index = array.indexOf(item);
+            if (index === -1){
+                array.push(item);
+            }else{console.log("Object already exists")}
+        }
+
+
         function runWorker(){
         console.time('Tempo Index');
             let r = document.getElementById('rnum').value;
@@ -18,11 +27,9 @@
             const random2 = crypto.getRandomValues( new Uint8Array(r));
             var res = [];
             for (i=0; i<random1.length; i++){
-                for(j=0;j<random1.length; j++){
+                for(j=0;j<random2.length; j++){
                     if(random1[i] % random2[j] == 0){
-                        if(res.indexOf(random1[i])===-1){
-                            res.push(random1[i]);
-                        }else{console.log('Already in')}                                  
+                        addItem(random1[i],res);                                  
                     }
                 }            
             }
