@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esempio Web Worker</title>
+</head>
+<body>
+
+    Insert Numbers <input type="text" id="rnum">
+    <button id="btn">Submit</button>
+    <div id="results"></div>
+
+    <script type="text/javascript">
+        document.getElementById('btn').addEventListener('click', runWorker);
+        function runWorker(){
+        console.time('Tempo Index');
+            let r = document.getElementById('rnum').value;
+            const random1 = crypto.getRandomValues( new Uint32Array(r));
+            const random2 = crypto.getRandomValues( new Uint8Array(r));
+
+            for (i=0; i<random1.length; i++){
+                for(j=0;j<random1.length; j++){
+                    if(random1[i] % random2[j] == 0){
+                        document.getElementById('results').innerHTML +=
+                        random1[i] + '<br>'
+                    }
+                }            
+            }
+        console.timeEnd('Tempo Index');
+        }
+
+
+    </script>
+
+</body>
+</html>
