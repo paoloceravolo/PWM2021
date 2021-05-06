@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project Name</title>
+        <meta charset="utf-8">    
+        <link href="es1.3-style-dark.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            .markerContent {color: red;}
+        </style>
+    </head>
+    <body class="parallax">
+        <header id="navbar">
+            <div class="title">
+                <h1>Project Name</h1>
+            </div>
+            <div class="menu">
+                <a href="#main">Main</a>
+                <a href="#r1">First</a>
+                <a href="#r2">Second</a>
+                <input type=""  name="search">
+                <button id="switch" class="off" onclick="fswitch(this)"></button>
+            </div>
+        </header>
+        <div id="page">
+            <div id="content">
+                <div  class="row">
+                <div class="cardMain standard-border col-1" id="main">
+                    <h2>Main Content</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies nunc ac dapibus cursus. Mauris at orci enim. Duis nec lectus vestibulum, porta odio non, accumsan mauris. Curabitur ac elit leo. Nulla non fringilla velit. Pellentesque nec posuere elit. Nam ultrices lobortis hendrerit.</p>
+                    <div>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies nunc ac dapibus cursus. Mauris at orci enim. Duis nec lectus vestibulum, porta odio non, accumsan mauris. Curabitur ac elit leo. Nulla non fringilla velit. Pellentesque nec posuere elit. Nam ultrices lobortis hendrerit.</p>
+                     </div>
+                </div>
+            </div>
+            <div  class="row">
+                <div class=" standard-border col-1">
+                    <div id="DivMappa" style="width: 100%; height: 500px"></div>
+                </div>
+            </div>
+                <div class="row" id="r1">
+                    <div class="Heading standard-border col-2">
+                        <h2>Heading1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies nunc ac dapibus cursus. Mauris at orci enim. Duis nec lectus vestibulum, porta odio non, accumsan mauris. Curabitur ac elit leo. Nulla non fringilla velit. Pellentesque nec posuere elit. Nam ultrices lobortis hendrerit.</p>
+                    </div>
+                     <div class="Heading standard-border col-2">
+                        <h2>Heading2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies nunc ac dapibus cursus. Mauris at orci enim. Duis nec lectus vestibulum, porta odio non, accumsan mauris. Curabitur ac elit leo. Nulla non fringilla velit. Pellentesque nec posuere elit. Nam ultrices lobortis hendrerit.</p>
+                    </div>
+                </div>
+                <div class="row" id="r2">
+                    <div class="Heading standard-border col-3">
+                        <h2>Heading3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies nunc ac dapibus cursus. Mauris at orci enim. Duis nec lectus vestibulum, porta odio non, accumsan mauris. Curabitur ac elit leo. Nulla non fringilla velit. Pellentesque nec posuere elit. Nam ultrices lobortis hendrerit.</p>
+                    </div>
+                    <div class="Heading standard-border col-3">
+                        <h2>Heading2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies nunc ac dapibus cursus. Mauris at orci enim. Duis nec lectus vestibulum, porta odio non, accumsan mauris. Curabitur ac elit leo. Nulla non fringilla velit. Pellentesque nec posuere elit. Nam ultrices lobortis hendrerit.</p>
+                    </div>
+                    <div class="Heading standard-border col-3">
+                        <h2>Heading4</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies nunc ac dapibus cursus. Mauris at orci enim. Duis nec lectus vestibulum, porta odio non, accumsan mauris. Curabitur ac elit leo. Nulla non fringilla velit. Pellentesque nec posuere elit. Nam ultrices lobortis hendrerit.</p>
+                    </div>
+                </div>
+            </div>
+            <aside id="sidebar" class="row">
+                <h1>SideBar</h1>
+                    <div class="row">
+                        <div class="clock">
+                            <div id="hours"></div>
+                            <div id="minutes"></div>
+                            <div id="seconds"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" class="sidebarPics">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" class="sidebarPics">
+                    </div>
+                    <div class="row">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" class="sidebarPics">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" class="sidebarPics">
+                    </div>
+            </aside>
+        </div>
+        <script>
+            function setTime(){
+                var date = new Date;
+                var seconds = date.getSeconds();
+                var minutes = date.getMinutes();
+                var hours = date.getHours();
+
+                var angleh = (hours * 30) + (minutes / 2);
+                var anglem = minutes * 6;
+                var angles = seconds * 6;
+
+  
+  document.getElementById('hours').style.transform = 'rotateZ('+ angleh +'deg)';
+  document.getElementById('minutes').style.transform = 'rotateZ('+ anglem +'deg)';
+  document.getElementById('seconds').style.transform = 'rotateZ('+ angles +'deg)';
+            
+            window.setTimeout(setTime, 1000);
+            }
+            setTime();
+        </script>
+         <script type="text/javascript">
+
+           function darkMode(){
+                document.getElementsByTagName('body')[0].className = 'parallax-dark';
+                document.getElementById('switch').className = 'on';
+                localStorage.setItem('darkmode', 'y')
+           }
+            function lightMode(){
+                document.getElementsByTagName('body')[0].className = 'parallax';
+                document.getElementById('switch').className = 'off';
+                localStorage.setItem('darkmode', 'n')
+           }
+
+            var darkmode = localStorage.getItem('darkmode');
+            if(darkmode == 'y'){
+                darkMode()
+            }else{lightMode()}
+
+            function fswitch(el){
+            if (el.className == 'on'){
+            lightMode()
+            }else{darkMode()}
+            }
+        </script>
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <script type="text/javascript" src="openlayer.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
