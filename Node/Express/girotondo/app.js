@@ -4,10 +4,24 @@ const fs = require('fs');
 const path = require('path');
 const serveIndex = require('serve-index');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+const crypto = require('crypto');
+
 
   var urlencodedParser =  bodyParser.urlencoded({ extended: false })
 
 const app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(session({
+  secret: "PWM2021",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {secure: false, maxAge: 3600000} 
+  }));
 
 app.use(express.static('public'));
 app.use('/images', serveIndex('public/images'));
@@ -18,7 +32,8 @@ app.use(morgan('combined',{stream: accessLogStream}))
 
 app.get('/', function(req,res){
   console.log('Ricevo una richiesta '+req.method)
-  res.send('Ciao Mondo '+req.method)
+  //res.send('Ciao Mondo '+req.method)
+  res.render('index', {title: 'ciao', method: req.method, query: req.query})
 })
 
 app.post('/', function(req,res){
@@ -58,6 +73,34 @@ app.post('/send_post', urlencodedParser, function(req,res){
   console.log(data)
   res.send(JSON.stringify(data));
 })
+
+app.get('/cookies', function(req,res){
+  if(req.session.page_views){
+    console.log("Utente ha vistato la pagina " + req.session.page_views + " volte");
+    req.session.page_views++;
+    }else{
+    req.session.page_views = 1;
+    console.log("Prima volta che utente visita la pagina");
+    //console.log(JSON.stringify(req.session))
+    }
+    res.send("Ciao cookies "+JSON.stringify(req.session));
+});
+
+app.post('/login', urlencodedParser, function(req, res) {
+    const pass = 'admin';
+    const hash1 = crypto.createHash('md5').update(pass).digest('hex');
+    const hash2 = crypto.createHash('md5').update(req.body.pass).digest('hex');
+
+    if(req.session.user_id){console.log("Utente " + req.session.user_id + " autenticato");}
+    if(hash1 === hash2){
+    console.log("Utente " + req.body.user_id + " autenticato");
+    req.session.user_id = req.body.user_id;
+    }else{
+    console.log("Utente non autenticato");
+    delete req.session.user_id
+    }
+    res.send("Ciao cookies "+JSON.stringify(req.session));
+  }); 
 
 
 var server = app.listen(3000, function(){
