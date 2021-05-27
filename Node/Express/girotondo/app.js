@@ -3,6 +3,9 @@ const morgan = require('morgan');
 const fs = require('fs');
 const path = require('path');
 const serveIndex = require('serve-index');
+const bodyParser = require('body-parser');
+
+  var urlencodedParser =  bodyParser.urlencoded({ extended: false })
 
 const app = express();
 
@@ -36,6 +39,24 @@ app.get('/univ*', function(req,res){
 app.get('/centro/:nome', function(req,res){
   console.log('Ricevo una richiesta '+req.params.nome)
   res.send('Centro '+req.params.nome)
+})
+
+app.get('/send_get', function(req,res){
+  data = {
+    nome_centro: req.query.nome_centro,
+    luogo_centro: req.query.luogo_centro
+  }
+  console.log(data)
+  res.send(JSON.stringify(data));
+})
+
+app.post('/send_post', urlencodedParser, function(req,res){
+  data = {
+    nome_centro: req.body.nome_centro,
+    luogo_centro: req.body.luogo_centro
+  }
+  console.log(data)
+  res.send(JSON.stringify(data));
 })
 
 
