@@ -30,6 +30,19 @@ var accessLogStream =  fs.createWriteStream(path.join(__dirname, 'access.log'), 
 
 app.use(morgan('combined',{stream: accessLogStream}))
 
+const axios = require('axios');
+
+  axios.all([
+  axios.get('https://www.dati.lombardia.it/resource/xv6v-yepr.json'),
+  axios.get('https://www.dati.lombardia.it/resource/xv6v-yepr.json')
+  ]).then(axios.spread((response1, response2) => {
+  console.log(response1.headers.date);
+  console.log(response2.data[0].link.url);
+  })).catch(error => {
+  console.log(error);
+  });
+
+
 app.get('/', function(req,res){
   console.log('Ricevo una richiesta '+req.method)
   //res.send('Ciao Mondo '+req.method)
